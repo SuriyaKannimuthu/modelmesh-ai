@@ -1,0 +1,76 @@
+# Repository-wide ignores. Language-specific rules live in
+# backend/.gitignore (Python) and frontend/.gitignore (Next.js).
+
+# ---------------------------------------------------------------------------
+# Secrets and local environment
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+credentials*.json
+service-account*.json
+
+# ---------------------------------------------------------------------------
+# Operating systems
+# ---------------------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*~
+
+# ---------------------------------------------------------------------------
+# Editors and IDEs
+# ---------------------------------------------------------------------------
+.idea/
+*.iml
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+*.swp
+*.swo
+*.sublime-workspace
+.history/
+
+# ---------------------------------------------------------------------------
+# Logs and temporary files
+# ---------------------------------------------------------------------------
+logs/
+*.log
+tmp/
+*.tmp
+*.bak
+
+# ---------------------------------------------------------------------------
+# Local infrastructure data
+# ---------------------------------------------------------------------------
+docker-data/
+docker-compose.override.yml
+*.dump
+*.rdb
+
+# ---------------------------------------------------------------------------
+# Kubernetes / Terraform local state
+# ---------------------------------------------------------------------------
+kubeconfig*
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+
+# ---------------------------------------------------------------------------
+# Load-test and benchmark output (publish curated results under docs/)
+# ---------------------------------------------------------------------------
+benchmarks/results/
